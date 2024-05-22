@@ -198,6 +198,10 @@ class EmployeeFormController extends GetxController {
   void setAddress() => address.value = addressC.text;
 
   void confirm() {
+    if (!formKey.currentState!.validate()) {
+      return;
+    }
+
     FocusScope.of(Get.context!).unfocus();
 
     final data = EmployeeModel(

@@ -7,9 +7,9 @@ class ProvinsiModel {
   @override
   String toString() => 'ProvinsiModel(id: $id, name: $name)';
 
-  factory ProvinsiModel.fromJson(Map<String, dynamic> json) => ProvinsiModel(
-        id: json['id'] as String?,
-        name: json['name'] as String?,
+  factory ProvinsiModel.fromJson(Map<String, dynamic>? json) => ProvinsiModel(
+        id: json?['id'] == null ? null : json!['id'] as String,
+        name: json?['name'] == null ? null : json!['name'] as String,
       );
 
   Map<String, dynamic> toJson() => {

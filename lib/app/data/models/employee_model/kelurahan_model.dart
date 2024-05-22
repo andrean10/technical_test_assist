@@ -10,10 +10,12 @@ class KelurahanModel {
     return 'KelurahanModel(id: $id, districtId: $districtId, name: $name)';
   }
 
-  factory KelurahanModel.fromJson(Map<String, dynamic> json) => KelurahanModel(
-        id: json['id'] as String?,
-        districtId: json['district_id'] as String?,
-        name: json['name'] as String?,
+  factory KelurahanModel.fromJson(Map<String, dynamic>? json) => KelurahanModel(
+        id: json?['id'] == null ? null : json!['id'] as String?,
+        districtId: json?['district_id'] == null
+            ? null
+            : json!['district_id'] as String?,
+        name: json?['name'] == null ? null : json!['name'] as String?,
       );
 
   Map<String, dynamic> toJson() => {

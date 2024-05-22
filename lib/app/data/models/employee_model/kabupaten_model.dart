@@ -10,10 +10,12 @@ class KabupatenModel {
     return 'KabupatenModel(id: $id, provinceId: $provinceId, name: $name)';
   }
 
-  factory KabupatenModel.fromJson(Map<String, dynamic> json) => KabupatenModel(
-        id: json['id'] as String?,
-        provinceId: json['province_id'] as String?,
-        name: json['name'] as String?,
+  factory KabupatenModel.fromJson(Map<String, dynamic>? json) => KabupatenModel(
+        id: json?['id'] == null ? null : json!['id'] as String?,
+        provinceId: json?['province_id'] == null
+            ? null
+            : json!['province_id'] as String?,
+        name: json?['name'] == null ? null : json!['name'] as String?,
       );
 
   Map<String, dynamic> toJson() => {

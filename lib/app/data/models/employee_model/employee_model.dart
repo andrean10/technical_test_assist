@@ -32,19 +32,19 @@ class EmployeeModel {
         nama: json['nama'] as String?,
         provinsi: json['provinsi'] == null
             ? null
-            : ProvinsiModel.fromJson(json['provinsi'] as Map<String, dynamic>),
+            : ProvinsiModel.fromJson(json['provinsi'] as Map<String, dynamic>?),
         kabupaten: json['kabupaten'] == null
             ? null
             : KabupatenModel.fromJson(
-                json['kabupaten'] as Map<String, dynamic>),
+                json['kabupaten'] as Map<String, dynamic>?),
         kecamatan: json['kecamatan'] == null
             ? null
             : KecamatanModel.fromJson(
-                json['kecamatan'] as Map<String, dynamic>),
+                json['kecamatan'] as Map<String, dynamic>?),
         kelurahan: json['kelurahan'] == null
             ? null
             : KelurahanModel.fromJson(
-                json['kelurahan'] as Map<String, dynamic>),
+                json['kelurahan'] as Map<String, dynamic>?),
         jalan: json['jalan'] as String?,
       );
 
