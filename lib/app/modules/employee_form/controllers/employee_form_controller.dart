@@ -140,12 +140,48 @@ class EmployeeFormController extends GetxController {
 
   void _initTextUpdate() {
     final data = args['data'] as EmployeeModel;
-    nameC.text = data.nama ?? '';
-    addressC.text = data.jalan ?? '';
-    provinceC.text = data.provinsi?.name ?? '';
-    kabupatenC.text = data.kabupaten?.name ?? '';
-    kecamatanC.text = data.kecamatan?.name ?? '';
-    kelurahanC.text = data.kelurahan?.name ?? '';
+
+    final nama = data.nama;
+    final jalan = data.jalan;
+    final provinsi = data.provinsi;
+    final kabupaten = data.kabupaten;
+    final kecamatan = data.kecamatan;
+    final kelurahan = data.kelurahan;
+
+    if (nama != null && nama != ' ') {
+      logger.d('debug: nama = $nama');
+      logger.d('debug: nama isNotEmpty = ${nama != ''}');
+
+      nameC.text = nama;
+    }
+
+    if (jalan != null && jalan != ' ') {
+      addressC.text = jalan;
+    }
+
+    if (provinsi != null &&
+        provinsi.name != null &&
+        provinsi.name != ' ') {
+      provinceC.text = provinsi.name!;
+    }
+
+    if (kabupaten != null &&
+        kabupaten.name != null &&
+        kabupaten.name != ' ') {
+      kabupatenC.text = kabupaten.name!;
+    }
+
+    if (kecamatan != null &&
+        kecamatan.name != null &&
+        kecamatan.name != ' ') {
+      kecamatanC.text = kecamatan.name!;
+    }
+
+    if (kelurahan != null &&
+        kelurahan.name != null &&
+        kelurahan.name != ' ') {
+      kelurahanC.text = kelurahan.name!;
+    }
 
     dataProvince.value = WilayahProvinsiModel(
       id: data.provinsi?.id,
